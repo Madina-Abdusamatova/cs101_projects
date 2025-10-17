@@ -30,8 +30,10 @@ while True:
         subtotal+=6.00
         print("Price: $6.00")
         print(f"Current total: ${subtotal:.2f}")
-    else:
+    elif membership_type=="done":
         break
+    else:
+        print("Please enter the correct command!")
 if subtotal>14:
     bulk_discount=2.50
     total=subtotal-bulk_discount
