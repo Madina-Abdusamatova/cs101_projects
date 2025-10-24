@@ -9,18 +9,18 @@ def minutes_to_seconds(minutes):
 
 # Define a function total_seconds(hours, minutes, seconds) that calculates total seconds
 def total_seconds(hours,minutes,seconds):
-    return hours*3600+minutes*60+seconds
+    return hours*3600+minutes*60+seconds # use existing functions
 
 # Define a function format_time(total_minutes) that:
 # Takes total minutes as input
 # Returns a formatted string “X hours and Y minutes”
 def format_time(total_minutes):
-    total_minutes=int(input())
+    total_minutes=int(input()) # you will get it as param
     hours=total_minutes//60
     left_minutes=total_minutes%60
     
 # Example: 135 minutes returns “2 hours and 15 minutes”
-    return hours,'hours',left_minutes,'minutes'
+    return hours,'hours',left_minutes,'minutes' # use f strings
 
 # Define a function can_fit_task(available_hours, task_hours, task_minutes) that:
 # Returns True if a task can fit within available time
@@ -28,7 +28,7 @@ def format_time(total_minutes):
 def can_fit_task(available_hours, task_hours, task_minutes):
     available_minutes=hours_to_minutes(available_hours)
     task_total_minutes=hours_to_minutes(task_hours)+task_minutes
-    return task_total_minutes<available_minutes
+    return task_total_minutes<=available_minutes
 
 # Define a function schedule_summary(task_name, hours, minutes) that prints:
 def schedule_summary(task_name,hours,minutes):
@@ -45,7 +45,7 @@ def schedule_summary(task_name,hours,minutes):
 # Convert 2.5 hours to minutes
 print(f" 2.5 hours in minutes is{hours_to_minutes(2.5)}")
 # Calculate total seconds for 1 hour, 45 minutes, 30 seconds
-print(f"Total seconds: {total_seconds((1,45,30))}")
+print(f"Total seconds: {total_seconds(1,45,30)}")
 # Format 200 minutes into hours and minutes
 print(f'200 minutes formatted: {format_time((200))}')
 # Check if a 3 hour 20 minute task fits in 3.5 hours available
